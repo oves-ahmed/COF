@@ -3,7 +3,10 @@
 # Validate aws cli is already installed
 command -v aws > /dev/null
 
+
+GREEN='\033[0;32m'
 return_id="$?"
+aws_ver=$(aws --version)
 
 if [[ ${return_id} -ne 0 ]]; then 
  echo "INFO: AWS CLI not installed, installing AWS CLI..."
@@ -25,13 +28,14 @@ unzip /tmp/awscliv2.zip -d /opt > /dev/null
 # Delete zip file
 rm /tmp/awscliv2.zip
 
-# sudo ./aws/install
+
+# install AWS cli
 sudo /opt/aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli
 
-if command -v aws > /dev/null; then 
- echo "INFO: AWS cli installed"
 else
  echo "WARN: AWS CLI already installed"
+ echo -e "${GREEN}" $aws_ver
  exit 1
 fi
-fi
+
+
