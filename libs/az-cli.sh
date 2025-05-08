@@ -7,7 +7,7 @@ command -v az
 return_id=$?
 
 
-if [[ ${return_id} -ne 0 ]]; then
+if [ ${return_id} -ne 0 ]; then
  echo "INFO: installing azure cli..."
  
  sudo apt-get update -y > /dev/null 2>&1
