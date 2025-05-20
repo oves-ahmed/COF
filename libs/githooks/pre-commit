@@ -3,5 +3,9 @@
 # file: .git/hook/pre-commit
 #
 
-. githooks/shellcheck-pre-commit.sh
-. githooks/detect-secret-pre-commit.sh
+#. githooks/shellcheck-precommit.sh
+#. githooks/detect-secret-pre-commit.sh
+
+. /home/azureuser/COF/libs/githooks
+
+#githooks/pre-commit
