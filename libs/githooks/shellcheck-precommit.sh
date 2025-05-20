@@ -18,7 +18,7 @@ SHELL_FILES=$(git diff --cached --name-only | grep -E '\.sh$')
 if [ -n "${SHELL_FILES}" ]; then
   $SHELL_CHECK_BINARY $(echo $SHELL_FILES) --severity=warning 
 
-    if [[ $? -ne 0 ]]; then
+    if [ $? -ne 0 ]; then
         echo "Shellcheck failed. Please fix the issues before committing."
         exit 1
     fi
